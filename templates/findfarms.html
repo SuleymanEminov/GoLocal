@@ -1,0 +1,97 @@
+<!Doctype Html>
+<Html>
+
+<Head>
+  <style type=text/css>
+    body {
+      height: 125vh;
+      margin-top: 80px;
+      padding: 30px;
+      background-size: cover;
+      font-family: sans-serif;
+    }
+
+    header {
+      background-color: #00873E;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 5px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+
+    }
+
+    header * {
+      display: inline;
+    }
+
+    header li {
+      margin: 20px;
+    }
+
+    header li a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+    <script type="module" src="{{url_for('static', filename='js/maps.js')}}"></script>
+  </Head>
+
+<Body style="background-color:#90EE90">
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="#"> GoLocal </a>
+        </li>
+        <li>
+          <a href="#"> Home </a>
+        </li>
+        <li>
+          <a href="#"> Find </a>
+        </li>
+        <li>
+          <a href="#"> Learn </a>
+        </li>
+        <li> <a href="#"> Donate </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <p1>Put in your location address to find local farm(s) near you</p1>
+  <main style="background-color:#00873E">
+    <section class="find farm">
+      <form class="form">
+        <fieldset>
+          <div class="fields-container">
+            <div class="fields">
+              <input class="input-text" type="text" />
+            </div>
+          </div>
+        </fieldset>
+      </form>
+      <div id="map">
+        <!-- 
+        The `defer` attribute causes the callback to execute after the full HTML
+        document has been parsed. For non-blocking uses, avoiding race conditions,
+        and consistent behavior across browsers, consider loading using Promises
+        with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+        -->
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+          defer
+        ></script>
+      </div>
+
+
+  </main>
+  <br>
+  <footer>
+    <p1>©GoLocal 2022. All Rights Reserved.</p1>
+  </footer>
+</Body>
+
+</Html>
